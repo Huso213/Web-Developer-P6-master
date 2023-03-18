@@ -19,6 +19,8 @@
   "author": "Huseyin Aktas",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongoose": "^7.0.2",
+    "save": "^2.9.0"
   }
 }

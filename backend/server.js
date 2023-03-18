@@ -47,7 +47,7 @@ server.on('error', errorHandler);//Gere les cas de different erreur possible
 server.on('listening',() => {
     const address = server.address();//ecouteur d'evenement pour indiquer sur quel port le serveur est execute
     const bind = typeof address === 'string' ? 'pipe' + address: 'port' + port;
-    console.log('Serveur en ecoute sur le port' + bind);//inque le no port ecoute
+    console.log('Serveur en ecoute sur le ' + bind);//inque le no port ecoute
 });
 
 server.listen(port);
