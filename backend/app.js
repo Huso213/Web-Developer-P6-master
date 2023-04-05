@@ -4,8 +4,9 @@ const path = require('path');
 const helmet = require('helmet');
 require('dotenv').config();
 
-
+//importation des fichiers
 const userRoutes = require('./routes/users');
+const takesRoutes = require('./routes/takes');
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.use((req, res, next) => {
  app.use(express.json());
  app.use(express.urlencoded({ extended: true}));
 
-app.use('/api/auth', userRoutes);
+app.use('../api/auth', userRoutes);
+app.use('../api/takes', takesRoutes)
 
 module.exports = app;
