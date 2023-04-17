@@ -11,11 +11,12 @@ const takesRoutes = require('./routes/takes');
 const app = express();
 
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb+srv://huso213:olCjq4LITNISwk0A@cluster0.efqkxkj.mongodb.net/FullstackhotTakes?retryWrites=true&w=majority',{
-    useNewUrlParser :true,
+
+mongoose.connect('mongodb+srv://huso95400:tfcOJV5001MYqUrr@cluster0.qu32yq0.mongodb.net/?retryWrites=true&w=majority',{
+    useNewUrlParser: true,
     useUnifiedTopology: true
 })
-.then(() => console.log('connexion à MongoDB réussie !'))
+.then(() => console.log('Connexion à MongoDB réussie !'))
 .catch(() => console.log('Connexion à MongoDB échouée !'));
 
 app.use((req, res, next) => {
@@ -24,12 +25,13 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
- });  
+ }); 
 
  app.use(express.json());
  app.use(express.urlencoded({ extended: true}));
+ 
 
-app.use('../api/auth', userRoutes);
-app.use('../api/takes', takesRoutes)
+ app.use('/api/auth', userRoutes);
+ app.use('/api/takes', takesRoutes)
 
 module.exports = app;

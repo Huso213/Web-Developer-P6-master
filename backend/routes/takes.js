@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const takesCtrl = require('../controllers/hottakes.js');
+const takesCtrl = require('../controllers/takes');
+const auth = require('../middleware/auth');
 
-router.post('/', takesCtrl.createTakes);
+router.post('/', auth, takesCtrl.createSauces);
+
 
 module.exports = router;
